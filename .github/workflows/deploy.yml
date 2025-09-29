@@ -53,7 +53,7 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-          cache-dependency-path: action/secretballot-frontend/package-lock.json
+          cache-dependency-path: secretballat-frontend/package-lock.json
           
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -62,24 +62,24 @@ jobs:
           
       - name: Install dependencies
         run: |
-          cd action/secretballot-frontend
+          cd secretballot-frontend
           npm ci
           
       - name: Build with Next.js
         run: |
-          cd action/secretballot-frontend
+          cd secretballot-frontend
           echo "Building with BASE_PATH: $NEXT_PUBLIC_BASE_PATH"
           npm run build
           
       - name: Create .nojekyll file
         run: |
-          cd action/secretballot-frontend/out
+          cd secretballot-frontend/out
           touch .nojekyll
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: action/secretballot-frontend/out
+          path: secretballot-frontend/out
 
   deploy:
     environment:
