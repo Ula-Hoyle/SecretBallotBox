@@ -53,7 +53,7 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-          cache-dependency-path: secretballat-frontend/package-lock.json
+          cache-dependency-path: secretballot-frontend/package-lock.json
           
       - name: Setup Pages
         uses: actions/configure-pages@v4
